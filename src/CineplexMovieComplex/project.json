@@ -1,5 +1,5 @@
 ﻿{
-  "userSecretsId": "aspnet-CineplexMovieComplex-9f269ea8-98a0-400a-ba9b-2f1c15c5968d",
+  "userSecretsId": "aspnet-CineplexMovieComplex-86bca1dc-16ae-4ae6-bc22-2f8dffcae438",
 
   "dependencies": {
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
@@ -57,7 +57,7 @@
   },
 
   "frameworks": {
-    "net452": { }
+    "net461": { }
   },
 
   "buildOptions": {

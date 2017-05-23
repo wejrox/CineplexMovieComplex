@@ -1,8 +1,8 @@
---temp-output:C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\obj\Debug\net452\
---out:C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\bin\Debug\net452\CineplexMovieComplex.exe
+--temp-output:C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\obj\Debug\net461\
+--out:C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\bin\Debug\net461\CineplexMovieComplex.exe
 --define:DEBUG
 --define:TRACE
---define:NET452
+--define:NET461
 --suppress-warning:CS1701
 --suppress-warning:CS1702
 --suppress-warning:CS1705
@@ -13,7 +13,7 @@
 --file-version:1.0.0.0
 --version:1.0.0.0
 --informational-version:1.0.0
---target-framework:.NETFramework,Version=v4.5.2
+--target-framework:.NETFramework,Version=v4.6.1
 --reference:C:\Users\James\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\net451\Microsoft.AspNetCore.Antiforgery.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\net451\Microsoft.AspNetCore.Authentication.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\net451\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -70,7 +70,7 @@
 --reference:C:\Users\James\.nuget\packages\Microsoft.Composition\1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.Composition\1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.Composition\1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Microsoft.CSharp.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.CSharp.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.DotNet.Cli.Utils\1.0.0-preview2-003121\lib\net451\Microsoft.DotNet.Cli.Utils.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.DotNet.InternalAbstractions\1.0.0\lib\net451\Microsoft.DotNet.InternalAbstractions.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.DotNet.ProjectModel\1.0.0-rc3-003121\lib\net451\Microsoft.DotNet.ProjectModel.dll
@@ -136,58 +136,73 @@
 --reference:C:\Users\James\.nuget\packages\NuGet.RuntimeModel\3.5.0-beta2-1484\lib\net45\NuGet.RuntimeModel.dll
 --reference:C:\Users\James\.nuget\packages\NuGet.Versioning\3.5.0-beta2-1484\lib\net45\NuGet.Versioning.dll
 --reference:C:\Users\James\.nuget\packages\Remotion.Linq\2.1.1\lib\net45\Remotion.Linq.dll
+--reference:C:\Users\James\.nuget\packages\System.AppContext\4.1.0\ref\net46\System.AppContext.dll
 --reference:C:\Users\James\.nuget\packages\System.Buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Collections.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Collections.Concurrent.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Collections.Concurrent.dll
 --reference:C:\Users\James\.nuget\packages\System.Collections.Immutable\1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.ComponentModel.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ComponentModel.dll
 --reference:C:\Users\James\.nuget\packages\System.ComponentModel.Primitives\4.1.0\ref\net45\System.ComponentModel.Primitives.dll
 --reference:C:\Users\James\.nuget\packages\System.ComponentModel.TypeConverter\4.1.0\ref\net45\System.ComponentModel.TypeConverter.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Diagnostics.Contracts.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Diagnostics.Debug.dll
---reference:C:\Users\James\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0\lib\portable-net45+win8+wpa81\System.Diagnostics.DiagnosticSource.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Globalization.dll
+--reference:C:\Users\James\.nuget\packages\System.Console\4.0.0\ref\net46\System.Console.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Contracts.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Debug.dll
+--reference:C:\Users\James\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Diagnostics.Tools.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Dynamic.Runtime.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Globalization.dll
 --reference:C:\Users\James\.nuget\packages\System.Interactive.Async\3.0.0\lib\net45\System.Interactive.Async.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.IO.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Linq.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Linq.Expressions.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Linq.Queryable.dll
---reference:C:\Users\James\.nuget\packages\System.Numerics.Vectors\4.1.1\ref\netstandard1.0\System.Numerics.Vectors.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.ObjectModel.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Reflection.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Reflection.Extensions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.IO.dll
+--reference:C:\Users\James\.nuget\packages\System.IO.FileSystem\4.0.1\ref\net46\System.IO.FileSystem.dll
+--reference:C:\Users\James\.nuget\packages\System.IO.FileSystem.Primitives\4.0.1\ref\net46\System.IO.FileSystem.Primitives.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Expressions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Linq.Queryable.dll
+--reference:C:\Users\James\.nuget\packages\System.Numerics.Vectors\4.1.1\ref\net46\System.Numerics.Vectors.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.ObjectModel.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Extensions.dll
 --reference:C:\Users\James\.nuget\packages\System.Reflection.Metadata\1.3.0\lib\portable-net45+win8\System.Reflection.Metadata.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Resources.ResourceManager.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Runtime.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Runtime.Extensions.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Runtime.InteropServices.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Reflection.Primitives.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Resources.ResourceManager.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Extensions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Handles.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.InteropServices.dll
 --reference:C:\Users\James\.nuget\packages\System.Runtime.InteropServices.RuntimeInformation\4.0.0\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Runtime.Serialization.Primitives.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Text.Encoding.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Text.Encoding.Extensions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Runtime.Numerics.dll
+--reference:C:\Users\James\.nuget\packages\System.Runtime.Serialization.Primitives\4.1.1\ref\net46\System.Runtime.Serialization.Primitives.dll
+--reference:C:\Users\James\.nuget\packages\System.Security.Cryptography.Algorithms\4.2.0\ref\net461\System.Security.Cryptography.Algorithms.dll
+--reference:C:\Users\James\.nuget\packages\System.Security.Cryptography.Encoding\4.0.0\ref\net46\System.Security.Cryptography.Encoding.dll
+--reference:C:\Users\James\.nuget\packages\System.Security.Cryptography.Primitives\4.0.0\ref\net46\System.Security.Cryptography.Primitives.dll
+--reference:C:\Users\James\.nuget\packages\System.Security.Cryptography.X509Certificates\4.1.0\ref\net461\System.Security.Cryptography.X509Certificates.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Text.Encoding.Extensions.dll
 --reference:C:\Users\James\.nuget\packages\System.Text.Encodings.Web\4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Threading.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Threading.Tasks.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.dll
 --reference:C:\Users\James\.nuget\packages\System.Threading.Tasks.Extensions\4.0.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Net.Http.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Security.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.Linq.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Configuration.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.ComponentModel.DataAnnotations.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Diagnostics.Tools.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Transactions.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.IO.Compression.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.IdentityModel.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Net.Http.WebRequest.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.ServiceModel.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Diagnostics.Tracing.dll
---reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Reflection.Primitives.dll
---resource:"C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\obj\Debug\net452\CineplexMovieComplexdotnet-compile.deps.json",CineplexMovieComplex.deps.json
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Tasks.Parallel.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.ReaderWriter.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XDocument.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Net.Http.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Security.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.Linq.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Configuration.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.DataAnnotations.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Transactions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.IO.Compression.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.IdentityModel.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Net.Http.WebRequest.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ServiceModel.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Numerics.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Serialization.dll
+--resource:"C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\obj\Debug\net461\CineplexMovieComplexdotnet-compile.deps.json",CineplexMovieComplex.deps.json
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Program.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Startup.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Controllers\AccountController.cs
