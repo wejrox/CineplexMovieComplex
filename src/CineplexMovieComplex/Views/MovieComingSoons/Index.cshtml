@@ -1,22 +1,22 @@
-@model IEnumerable<CineplexMovieComplex.Models.Cineplex>
+@model IEnumerable<CineplexMovieComplex.Models.MovieComingSoon>
 
 @{
-    ViewData["Title"] = "Cineplex Locations";
+    ViewData["Title"] = "Coming Soon";
 }
 
-<h2>Cineplex Locations</h2>
+<h2>Coming soon to a Cineplex near you!</h2>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                
+                Poster
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Location)
+                Movie Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ShortDescription)
+                Description
             </th>
             <th></th>
         </tr>
@@ -28,13 +28,13 @@
                 @Html.DisplayFor(modelItem => item.ImageUrl)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ShortDescription)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.CineplexId">Details</a>
+                <a asp-action="Details" asp-route-id="@item.MovieComingSoonId">Details</a>
             </td>
         </tr>
 }

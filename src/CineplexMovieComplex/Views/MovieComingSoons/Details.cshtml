@@ -1,29 +1,29 @@
-@model CineplexMovieComplex.Models.Cineplex
+@model CineplexMovieComplex.Models.MovieComingSoon
 
 @{
-    ViewData["Title"] = "Cineplex Details";
+    ViewData["Title"] = "Coming Soon";
 }
 
-<h2>Cineplex Details</h2>
+<h2>Coming Soon!</h2>
 
 <div>
-    <h4>@Html.DisplayFor(model => model.Location)</h4>
+    <h4>@Html.DisplayFor(model => model.Title)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
+            Poster
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ImageUrl)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Location)
+            Name
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayFor(model => model.Title)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LongDescription)
+            Description
         </dt>
         <dd>
             @Html.DisplayFor(model => model.LongDescription)
