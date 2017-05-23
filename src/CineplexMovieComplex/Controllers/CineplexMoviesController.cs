@@ -24,6 +24,34 @@ namespace CineplexMovieComplex.Controllers
             var wdt_a2_jamesContext = _context.CineplexMovie.Include(c => c.Cineplex).Include(c => c.Movie);
             return View(await wdt_a2_jamesContext.ToListAsync());
         }
+        
+        // GET: CineplexMovies by Cineplex or Movie Name
+        public async Task<IActionResult> Search(string SearchString, string SearchType)
+        {
+            if (SearchType == "MovieName")
+            {
+                var namedMovies = from m in _context.CineplexMovie
+                                  select m;
+
+                // Check for named movies
+                if (!String.IsNullOrEmpty(SearchString))
+                    namedMovies = namedMovies.Where(s => s.Movie.Title.Contains(SearchString));
+                return View(await namedMovies.Include(m => m.Movie).Include(c => c.Cineplex).ToListAsync());
+            }
+            else if (SearchType == "CineplexName")
+            {
+                var cineplexMovies = from m in _context.CineplexMovie
+                                     select m;
+
+                // Check for cineplex specified movies
+                if (!String.IsNullOrEmpty(SearchString))
+                    cineplexMovies = cineplexMovies.Where(s => s.Cineplex.Location.Contains(SearchString));
+                return View(await cineplexMovies.Include(m => m.Movie).Include(c => c.Cineplex).ToListAsync());
+            }
+
+            var wdt_a2_jamesContext = _context.CineplexMovie.Include(c => c.Cineplex).Include(c => c.Movie);
+            return View(await wdt_a2_jamesContext.Include(m => m.Movie).Include(c => c.Cineplex).ToListAsync());
+        }
 
         // GET: CineplexMovies/Details/5
         public async Task<IActionResult> Details(int? id)
