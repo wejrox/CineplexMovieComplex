@@ -49,6 +49,10 @@ namespace CineplexMovieComplex
 
             services.AddMvc();
 
+            // Add custom  configuration
+            services.AddDbContext<Models.wdt_a2_jamesContext>(options =>
+            options.UseSqlServer(Configuration["Data:wdt_a2_jamesContext:ConnectionString"]));
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();

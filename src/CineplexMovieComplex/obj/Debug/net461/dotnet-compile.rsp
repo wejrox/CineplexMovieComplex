@@ -206,8 +206,10 @@
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Program.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Startup.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Controllers\AccountController.cs
+C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Controllers\CineplexesController.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Controllers\HomeController.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Controllers\ManageController.cs
+C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Controllers\MoviesController.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Data\ApplicationDbContext.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Data\Migrations\00000000000000_CreateIdentitySchema.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
