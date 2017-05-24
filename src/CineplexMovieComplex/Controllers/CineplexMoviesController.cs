@@ -61,7 +61,7 @@ namespace CineplexMovieComplex.Controllers
                 return NotFound();
             }
 
-            var cineplexMovie = await _context.CineplexMovie.Include(c => c.Cineplex).Include(c => c.Movie).SingleOrDefaultAsync(m => m.CineplexMovieId == id);
+            var cineplexMovie = await _context.CineplexMovie.SingleOrDefaultAsync(m => m.CineplexMovieId == id);
             if (cineplexMovie == null)
             {
                 return NotFound();

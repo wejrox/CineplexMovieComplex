@@ -14,14 +14,7 @@
             Poster
         </dt>
         <dd>
-            <img src="@Url.Content(Html.DisplayTextFor(model => model.Movie.ImageUrl))" style="display:block; height:auto; width:auto; max-height: 500px; max-width:300px;" /> 
-            <br />
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Cineplex.Location)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Cineplex.Location)
+            @Html.DisplayFor(model => model.Movie.ImageUrl)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Movie.Title)
@@ -30,26 +23,29 @@
             @Html.DisplayFor(model => model.Movie.Title)
         </dd>
         <dt>
-            Viewing Time
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ViewingTime)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.Day)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Day)
         </dd>
         <dt>
-            Seats Remaining
+            @Html.DisplayNameFor(model => model.SeatsAvailable)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.SeatsAvailable) / 20
+            @Html.DisplayFor(model => model.SeatsAvailable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewingTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ViewingTime)
         </dd>
     </dl>
 </div>
 <div>
-    <h3><b><a asp-action="InitiateBooking">Book a seat!</a></b></h3><br />
+    <center>
+        <a asp-action="InitiateBooking">Book a seat!</a><br />
+    </center>
+    <br />
     <a asp-action="Index">Back to List</a><br />
 </div>
