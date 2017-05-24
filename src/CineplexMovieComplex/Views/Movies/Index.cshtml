@@ -1,0 +1,42 @@
+@model IEnumerable<CineplexMovieComplex.Models.Movie>
+
+@{
+    ViewData["Title"] = "Currently Screening Movies";
+}
+
+<h2>Currently Screening Movies</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Poster
+            </th>
+            <th>
+                Movie Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@Url.Content(item.ImageUrl)" style="display:block; max-height:300px;max-width:150px;height:auto;width:auto;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.MovieId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

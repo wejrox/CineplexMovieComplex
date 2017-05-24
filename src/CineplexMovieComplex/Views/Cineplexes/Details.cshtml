@@ -1,0 +1,35 @@
+@model CineplexMovieComplex.Models.Cineplex
+
+@{
+    ViewData["Title"] = "Cineplex Details";
+}
+
+<h2>Cineplex Details</h2>
+
+<div>
+    <h3>@Html.DisplayFor(model => model.Location)</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            
+        </dt>
+        <dd>
+            <img src="@Url.Content(@Html.DisplayTextFor(model => model.ImageUrl))" style="display:block; max-height:500px; max-width:300px; height:auto; width:auto;" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt>
+            Description
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LongDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

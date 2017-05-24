@@ -1,0 +1,42 @@
+@model IEnumerable<CineplexMovieComplex.Models.Cineplex>
+
+@{
+    ViewData["Title"] = "Cineplex Locations";
+}
+
+<h2>Cineplex Locations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@Url.Content(item.ImageUrl)" style="display:block; max-height:300px;max-width:150px;height:auto;width:auto;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.CineplexId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

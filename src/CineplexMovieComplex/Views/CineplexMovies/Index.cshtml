@@ -1,0 +1,69 @@
+@model IEnumerable<CineplexMovieComplex.Models.CineplexMovie>
+
+@{
+    ViewData["Title"] = "Movie Screening Times";
+}
+
+<h2>Movie Screening Times</h2>
+<form asp-controller="CineplexMovies" asp-action="Search" method="get">
+    <p>
+        Search: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" /> <br />
+        Movie Name <input checked="checked"
+                          id="SearchType"
+                          name="SearchType"
+                          type="radio"
+                          value="MovieName" />
+
+        Cineplex Name <input id="SearchType"
+                             name="SearchType"
+                             type="radio"
+                             value="CineplexName" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Movie Name
+            </th>
+            <th>
+                Cineplex
+            </th>
+            <th>
+                Seats Available
+            </th>
+            <th>
+                Screening Time
+            </th>
+            <th>
+                Day
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cineplex.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatsAvailable) / 20
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.CineplexMovieId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

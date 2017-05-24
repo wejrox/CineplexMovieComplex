@@ -1,0 +1,42 @@
+@model IEnumerable<CineplexMovieComplex.Models.MovieComingSoon>
+
+@{
+    ViewData["Title"] = "Coming Soon";
+}
+
+<h2>Coming soon to a Cineplex near you!</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Poster
+            </th>
+            <th>
+                Movie Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@Url.Content(item.ImageUrl)" style="display:block; max-height:300px;max-width:150px;height:auto;width:auto;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.MovieComingSoonId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
