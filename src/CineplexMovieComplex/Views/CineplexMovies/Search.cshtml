@@ -8,7 +8,6 @@
 <form asp-controller="CineplexMovies" asp-action="Search" method="get">
     <p>
         Search: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" /> <br />
         Movie Name <input checked="checked"
                           id="SearchType"
                           name="SearchType"
@@ -19,8 +18,11 @@
                              name="SearchType"
                              type="radio"
                              value="CineplexName" />
+
+        <input type="submit" value="Filter" />
     </p>
 </form>
+<a asp-action="Index">Back to list</a>
 <table class="table">
     <thead>
         <tr>

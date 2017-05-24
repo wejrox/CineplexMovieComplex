@@ -40,7 +40,7 @@ namespace CineplexMovieComplex.Controllers
 
             return View(movie);
         }
-
+        
         // GET: Movies/Create
         public IActionResult Create()
         {
