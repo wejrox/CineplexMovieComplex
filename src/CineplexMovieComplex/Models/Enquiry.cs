@@ -8,10 +8,12 @@ namespace CineplexMovieComplex.Models
 {
     public class Enquiry
     {
+        [Required]
+        public int EnquiryId { get; set; }
         [Required, Display(Name ="Your Name")]
         public string FromName { get; set; }
         [Required, Display(Name ="Your Email"), EmailAddress]
-        public string FromEmail { get; set; }
+        public string Email { get; set; }
         [Required]
         public string Message { get; set; }
     }
