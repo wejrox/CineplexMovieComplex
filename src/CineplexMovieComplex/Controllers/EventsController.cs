@@ -27,8 +27,8 @@ namespace CineplexMovieComplex.Controllers
             {
                 var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
                 var message = new MailMessage();
-                message.To.Add(new MailAddress("events.abccineplex@gmail.com"));  // replace with valid value 
-                message.From = new MailAddress("events.abccineplex@gmail.com");  // replace with valid value
+                message.To.Add(new MailAddress("events.abccineplex@gmail.com"));
+                message.From = new MailAddress("events.abccineplex@gmail.com");
                 message.Subject = "New events enquiry!";
                 message.Body = string.Format(body, model.FromName, model.Email, model.Message);
                 message.IsBodyHtml = true;
@@ -37,8 +37,8 @@ namespace CineplexMovieComplex.Controllers
                 {
                     var credential = new NetworkCredential
                     {
-                        UserName = "events.abccineplex@gmail.com",  // replace with valid value
-                        Password = "Cineplex1!"  // replace with valid value
+                        UserName = "events.abccineplex@gmail.com",
+                        Password = "Cineplex1!"
                     };
                     smtp.Credentials = credential;
                     smtp.Host = "smtp.gmail.com";
