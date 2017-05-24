@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Movie Details";
 }
-
 <h2>Movie Details</h2>
 
 <div>
@@ -11,10 +10,10 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
+            Poster
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            <img src="@Url.Content(Html.DisplayTextFor(model => model.ImageUrl))" style="display:block; height:auto; width:auto; max-height: 500px; max-width:300px;" />
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -23,7 +22,7 @@
             @Html.DisplayFor(model => model.Title)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LongDescription)
+            Description
         </dt>
         <dd>
             @Html.DisplayFor(model => model.LongDescription)

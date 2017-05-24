@@ -14,7 +14,7 @@
             Poster
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            <img src="@Url.Content(Html.DisplayTextFor(model => model.ImageUrl))" style="display:block; height:auto; width:auto; max-height: 500px; max-width:300px;" /> 
         </dd>
         <dt>
             Name
