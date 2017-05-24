@@ -7,14 +7,14 @@
 <h2>Coming Soon!</h2>
 
 <div>
-    <h4>@Html.DisplayFor(model => model.Title)</h4>
+    <h3>@Html.DisplayFor(model => model.Title)</h3>
     <hr />
     <dl class="dl-horizontal">
         <dt>
             Poster
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            <img src="@Url.Content(@Html.DisplayTextFor(model => model.ImageUrl))" style="display:block; max-height:500px; max-width:300px; height:auto; width:auto;" />
         </dd>
         <dt>
             Name
