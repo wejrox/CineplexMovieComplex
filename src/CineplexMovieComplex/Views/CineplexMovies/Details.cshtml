@@ -1,15 +1,27 @@
 @model CineplexMovieComplex.Models.CineplexMovie
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Movie Details";
 }
 
-<h2>Details</h2>
+<h2>Movie Details</h2>
 
 <div>
-    <h4>CineplexMovie</h4>
+    <h4>@Html.DisplayFor(model => model.Movie.Title)</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            Poster
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.ImageUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Title)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Day)
         </dt>
@@ -31,6 +43,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.CineplexMovieId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <center>
+        <a asp-action="InitiateBooking">Book a seat!</a><br />
+    </center>
+    <br />
+    <a asp-action="Index">Back to List</a><br />
 </div>

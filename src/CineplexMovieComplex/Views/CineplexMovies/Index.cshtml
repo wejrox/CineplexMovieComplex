@@ -1,25 +1,28 @@
 @model IEnumerable<CineplexMovieComplex.Models.CineplexMovie>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Movie Screening Times";
 }
 
-<h2>Index</h2>
+<h2>Movie Screening Times</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Day)
+                Movie Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SeatsAvailable)
+                Cineplex
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ViewingTime)
+                Seats Available
+            </th>
+            <th>
+                Screening Time
+            </th>
+            <th>
+                Day
             </th>
             <th></th>
         </tr>
@@ -28,18 +31,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Day)
+                @Html.DisplayFor(modelItem => item.Movie.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SeatsAvailable)
+                @Html.DisplayFor(modelItem => item.Cineplex.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatsAvailable) / 20
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ViewingTime)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CineplexMovieId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CineplexMovieId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CineplexMovieId">Delete</a>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.CineplexMovieId">Details</a>
             </td>
         </tr>
 }
