@@ -20,5 +20,7 @@ namespace CineplexMovieComplex.Models
         public virtual ICollection<Seat> Seat { get; set; }
         public virtual Cineplex Cineplex { get; set; }
         public virtual Movie Movie { get; set; }
+
+        
     }
 }

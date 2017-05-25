@@ -1,0 +1,58 @@
+@model CineplexMovieComplex.Models.CineplexMovie
+
+@{
+    ViewData["Title"] = "SelectSeat";
+}
+
+<h2>Select Seat</h2>
+
+<form asp-action="AddToCart">
+    <p class="form-horizontal">
+        <h4>Book seats for <b>@Html.DisplayFor(m => m.Movie.Title)</b></h4>
+        <hr />
+        <div class="form-group" style="padding-bottom:2%;">
+            <label asp-for="Movie.Title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Movie.Title" class="form-control" readonly="readonly"/>
+                <span asp-validation-for="Movie.Title" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group" style="padding-bottom:2%;">
+            <label asp-for="Cineplex.Location" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Cineplex.Location" class="form-control" readonly="readonly" />
+                <span asp-validation-for="Cineplex.Location" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ViewingTime" class="col-md-2 control-label" style="padding-bottom:2%";>Viewing Time</label>
+            <div class="col-md-10">
+                <input asp-for="ViewingTime" class="form-control" readonly="readonly"/>
+                <span asp-validation-for="ViewingTime" class="text-danger" />
+            </div>
+        </div>
+        <hr />
+        <h3 style="padding-top:2%;">
+            Please select which seat(s) you wish to book.
+        </h3>
+        <div asp-validation-summary="ModelOnly" class="text-danger" style="padding-bottom:2%;"></div>
+        <div class="form-group">
+            <label asp-for="Seat" class="col-md-2 control-label" style="padding-bottom:2%;">Seats Available</label>
+            <div class="col-md-10">
+                <select asp-for="Seat" class="form-control" style="height:200px;" asp-items="@(new SelectList(Model.Seat,"CombinedSeat","CombinedSeat"))"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add to Ticket Machine" class="btn btn-default" />
+            </div>
+        </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

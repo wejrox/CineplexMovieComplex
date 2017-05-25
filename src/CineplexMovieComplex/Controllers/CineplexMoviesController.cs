@@ -70,6 +70,44 @@ namespace CineplexMovieComplex.Controllers
             return View(cineplexMovie);
         }
 
+        // GET: Display seating to choose from
+        public async Task<IActionResult> SelectSeat(int? id)
+        {
+            /*
+            if (cineplexId == null)
+            {
+                return NotFound();
+            }
+
+            var seats = from s in _context.Seat
+                              select s;
+
+            seats = seats.Where(s => s.CineplexMovie.CineplexId == cineplexId);
+
+            if (seats == null)
+            {
+                return NotFound();
+            }
+
+            return View(await seats.Include(s => s.CineplexMovie).ToListAsync());
+            */
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cineplexMovie = await _context.CineplexMovie.Include(cm => cm.Seat).Include(cm => cm.Movie).Include(cm => cm.Cineplex).SingleOrDefaultAsync(m => m.CineplexMovieId == id);
+            if (cineplexMovie == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Seat = cineplexMovie.Seat;
+
+            return View(cineplexMovie);
+        }
+
         // GET: CineplexMovies/Create
         public IActionResult Create()
         {
