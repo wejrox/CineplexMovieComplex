@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CineplexMovieComplex.Models
 {
@@ -7,14 +8,14 @@ namespace CineplexMovieComplex.Models
     {
         public Cart()
         {
-            MovieBooking = new HashSet<MovieBooking>();
+            MovieTicket = new HashSet<MovieTicket>();
         }
-
+        [Key]
         public int CartId { get; set; }
         public int? CustomerId { get; set; }
         public DateTime? LastChange { get; set; }
         public bool? Finalised { get; set; }
 
-        public virtual ICollection<MovieBooking> MovieBooking { get; set; }
+        public virtual ICollection<MovieTicket> MovieTicket { get; set; }
     }
 }

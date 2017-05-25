@@ -83,25 +83,25 @@ namespace CineplexMovieComplex.Models
                 entity.Property(e => e.Title).IsRequired();
             });
 
-            modelBuilder.Entity<MovieBooking>(entity =>
+            modelBuilder.Entity<MovieTicket>(entity =>
             {
-                entity.HasKey(e => e.ReservationId)
+                entity.HasKey(e => e.MovieTicketId)
                     .HasName("PK__MovieBoo__B7EE5F047D2B3094");
 
-                entity.Property(e => e.ReservationId).HasColumnName("ReservationID");
+                entity.Property(e => e.MovieTicketId).HasColumnName("MovieTicketID");
 
                 entity.Property(e => e.CartId).HasColumnName("CartID");
 
                 entity.Property(e => e.SeatId).HasColumnName("SeatID");
 
                 entity.HasOne(d => d.Cart)
-                    .WithMany(p => p.MovieBooking)
+                    .WithMany(p => p.MovieTicket)
                     .HasForeignKey(d => d.CartId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK__MovieBook__CartI__4F7CD00D");
 
                 entity.HasOne(d => d.Seat)
-                    .WithMany(p => p.MovieBooking)
+                    .WithMany(p => p.MovieTicket)
                     .HasForeignKey(d => d.SeatId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK__MovieBook__SeatI__5070F446");
@@ -137,7 +137,7 @@ namespace CineplexMovieComplex.Models
         public virtual DbSet<CineplexMovie> CineplexMovie { get; set; }
         public virtual DbSet<Enquiry> Enquiry { get; set; }
         public virtual DbSet<Movie> Movie { get; set; }
-        public virtual DbSet<MovieBooking> MovieBooking { get; set; }
+        public virtual DbSet<MovieTicket> MovieTicket { get; set; }
         public virtual DbSet<MovieComingSoon> MovieComingSoon { get; set; }
         public virtual DbSet<Seat> Seat { get; set; }
     }

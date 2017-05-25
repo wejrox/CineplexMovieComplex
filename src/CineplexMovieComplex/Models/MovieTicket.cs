@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CineplexMovieComplex.Models
 {
-    public partial class MovieBooking
+    public partial class MovieTicket
     {
-        public int ReservationId { get; set; }
+        [Key]
+        public int MovieTicketId { get; set; }
+        [Display(Name = "Cart ID")]
         public int CartId { get; set; }
+        [Display(Name = "Seat ID")]
         public int SeatId { get; set; }
 
         public virtual Cart Cart { get; set; }
