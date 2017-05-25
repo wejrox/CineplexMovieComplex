@@ -7,7 +7,7 @@ namespace CineplexMovieComplex.Models
     {
         public CineplexMovie()
         {
-            Reservation = new HashSet<Reservation>();
+            Seat = new HashSet<Seat>();
         }
 
         public int CineplexMovieId { get; set; }
@@ -17,7 +17,7 @@ namespace CineplexMovieComplex.Models
         public TimeSpan ViewingTime { get; set; }
         public int SeatsAvailable { get; set; }
 
-        public virtual ICollection<Reservation> Reservation { get; set; }
+        public virtual ICollection<Seat> Seat { get; set; }
         public virtual Cineplex Cineplex { get; set; }
         public virtual Movie Movie { get; set; }
     }

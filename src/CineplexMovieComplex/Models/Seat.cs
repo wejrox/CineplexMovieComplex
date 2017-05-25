@@ -7,16 +7,16 @@ namespace CineplexMovieComplex.Models
     {
         public Seat()
         {
-            SeatReserved = new HashSet<SeatReserved>();
+            MovieBooking = new HashSet<MovieBooking>();
         }
 
         public int SeatId { get; set; }
         public int Row { get; set; }
         public int Number { get; set; }
         public bool? Reserved { get; set; }
-        public int CineplexId { get; set; }
+        public int CineplexMovieId { get; set; }
 
-        public virtual ICollection<SeatReserved> SeatReserved { get; set; }
-        public virtual Cineplex Cineplex { get; set; }
+        public virtual ICollection<MovieBooking> MovieBooking { get; set; }
+        public virtual CineplexMovie CineplexMovie { get; set; }
     }
 }
