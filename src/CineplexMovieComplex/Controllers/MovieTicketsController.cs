@@ -35,6 +35,13 @@ namespace CineplexMovieComplex.Controllers
             return View(await wdt_a2_jamesContext.ToListAsync());
         }
 
+        // GET: MovieTickets/Checkout
+        public async Task<IActionResult> Checkout()
+        {
+
+            return View();
+        }
+
         // GET: MovieTickets/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -73,6 +80,7 @@ namespace CineplexMovieComplex.Controllers
                 // Create the movie ticket from the model supplied
                 movieTicket = new MovieTicket();
                 movieTicket.SeatId = model.SelectedSeatId;
+                movieTicket.Concession = model.Concession;
 
                 // Accomodate for seat starting from 1
                 //movieTicket.SeatId += 1;

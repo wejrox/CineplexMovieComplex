@@ -8,6 +8,7 @@ namespace CineplexMovieComplex.Models
     public class BookSeatFormModel
     {
         public int SelectedSeatId { get; set; }
+        public bool Concession { get; set; }
         public CineplexMovie CineplexMovie { get; set; }
     }
 }
