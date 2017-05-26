@@ -190,7 +190,9 @@ namespace CineplexMovieComplex.Controllers
             return View(MovieTicket);
         }
 
-        // GET: MovieTickets/Delete/5
+        // POST: MovieTickets/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -199,23 +201,26 @@ namespace CineplexMovieComplex.Controllers
             }
 
             var MovieTicket = await _context.MovieTicket.SingleOrDefaultAsync(m => m.MovieTicketId == id);
+            var Seat = await _context.Seat.Where(s => s.SeatId == MovieTicket.SeatId).FirstAsync();
+            var CineplexMovie = await _context.CineplexMovie.Where(cm => cm.CineplexMovieId == Seat.CineplexMovieId).FirstAsync();
+
             if (MovieTicket == null)
             {
                 return NotFound();
             }
 
-            return View(MovieTicket);
-        }
-
-        // POST: MovieTickets/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var MovieTicket = await _context.MovieTicket.SingleOrDefaultAsync(m => m.MovieTicketId == id);
+            // Make seat available again
+            Seat.Reserved = false;
+            _context.Seat.Update(Seat);
+            // Update cineplex movie
+            CineplexMovie.SeatsAvailable++;
+            _context.CineplexMovie.Update(CineplexMovie);
+            // Delete the MovieTicket
             _context.MovieTicket.Remove(MovieTicket);
+
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+
+            return RedirectToAction("ViewCart");
         }
 
         private bool MovieTicketExists(int id)
