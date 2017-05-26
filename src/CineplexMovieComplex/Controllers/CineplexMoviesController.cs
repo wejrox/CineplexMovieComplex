@@ -79,14 +79,16 @@ namespace CineplexMovieComplex.Controllers
             }
 
             var cineplexMovie = await _context.CineplexMovie.Include(cm => cm.Seat).Include(cm => cm.Movie).Include(cm => cm.Cineplex).SingleOrDefaultAsync(m => m.CineplexMovieId == id);
+
             if (cineplexMovie == null)
             {
                 return NotFound();
             }
 
-            ViewBag.Seat = cineplexMovie.Seat;
+            BookSeatFormModel bookSeatFormModel = new BookSeatFormModel();
+            bookSeatFormModel.CineplexMovie = cineplexMovie;
 
-            return View(cineplexMovie);
+            return View(bookSeatFormModel);
         }
 
         // GET: CineplexMovies/Create

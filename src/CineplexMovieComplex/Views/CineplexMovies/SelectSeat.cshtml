@@ -1,4 +1,4 @@
-@model CineplexMovieComplex.Models.CineplexMovie
+@model CineplexMovieComplex.Models.BookSeatFormModel
 
 @{
     ViewData["Title"] = "SelectSeat";
@@ -10,35 +10,35 @@
 {
     @Html.AntiForgeryToken()
     <h4>
-        Book seats for <b>@Html.DisplayFor(m => m.Movie.Title)</b>
+        Book seats for <b>@Html.DisplayFor(m => m.CineplexMovie.Movie.Title)</b>
     </h4>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(m => m.Movie.Title, new { @class = "col-md-2 control-label", @readonly = "readonly" })
+            @Html.LabelFor(m => m.CineplexMovie.Movie.Title, new { @class = "col-md-2 control-label", @readonly = "readonly" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Movie.Title, new { @class = "form-control", @readonly = "readonly" })
-                @Html.ValidationMessageFor(m => m.Movie.Title)
+                @Html.TextBoxFor(m => m.CineplexMovie.Movie.Title, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessageFor(m => m.CineplexMovie.Movie.Title)
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Cineplex.Location, new { @class = "col-md-2 control-label", @readonly = "readonly" })
+            @Html.LabelFor(m => m.CineplexMovie.Cineplex.Location, new { @class = "col-md-2 control-label", @readonly = "readonly" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Cineplex.Location, new { @class = "form-control", @readonly = "readonly" })
-                @Html.ValidationMessageFor(m => m.Cineplex.Location)
+                @Html.TextBoxFor(m => m.CineplexMovie.Cineplex.Location, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessageFor(m => m.CineplexMovie.Cineplex.Location)
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.ViewingTime, new { @class = "col-md-2 control-label", @readonly = "readonly" })
+            @Html.LabelFor(m => m.CineplexMovie.ViewingTime, new { @class = "col-md-2 control-label", @readonly = "readonly" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.ViewingTime, new { @class = "form-control", @readonly = "readonly" })
-                @Html.ValidationMessageFor(m => m.ViewingTime)
+                @Html.TextBoxFor(m => m.CineplexMovie.ViewingTime, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessageFor(m => m.CineplexMovie.ViewingTime)
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Seat, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.CineplexMovie.Seat, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.DropDownListFor(m => m.Seat, new SelectList(Model.Seat.Where(s => s.Reserved == false), "SeatId", "CombinedSeat"))
-                @Html.ValidationMessageFor(m => m.Seat)
+                @Html.DropDownListFor(m => m.SelectedSeatId, new SelectList(Model.CineplexMovie.Seat.Where(s => s.Reserved == false), "SeatId", "CombinedSeat"))
+                @Html.ValidationMessageFor(m => m.SelectedSeatId)
             </div>
         </div>
         <div class="form-group">

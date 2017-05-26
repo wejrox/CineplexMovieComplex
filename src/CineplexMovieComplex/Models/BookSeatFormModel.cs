@@ -7,7 +7,7 @@ namespace CineplexMovieComplex.Models
 {
     public class BookSeatFormModel
     {
-        public Seat SelectedSeat { get; set; }
-        public CineplexMovie CineplexMovieId { get; set; }
+        public int SelectedSeatId { get; set; }
+        public CineplexMovie CineplexMovie { get; set; }
     }
 }

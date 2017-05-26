@@ -36,12 +36,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="Movies" asp-action="Index">Screening</a></li>
-                            <li><a asp-area="" asp-controller="MovieComingSoons" asp-action="Index">Coming Soon!</a></li>
+                            <li><a asp-area="" asp-controller="Movies" asp-action="Index">Out Now</a></li>
+                            <li><a asp-area="" asp-controller="MovieComingSoons" asp-action="Index">Coming Soon</a></li>
                         </ul>     
-                    </li>           
+                    </li>
                     <li><a asp-area="" asp-controller="Cineplexes" asp-action="Index">Cinemas</a></li>
-                    <li><a asp-area="" asp-controller="CineplexMovies" asp-action="Index">Sessions</a></li>
+                    <li><a asp-area="" asp-controller="CineplexMovies" asp-action="Index">Session Times</a></li>
+                    <li><a asp-area="" asp-controller="MovieTickets" asp-action="ViewCart" style="color:gold">Cart</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

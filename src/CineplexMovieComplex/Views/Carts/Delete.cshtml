@@ -1,0 +1,40 @@
+@model CineplexMovieComplex.Models.Cart
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Finalised)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Finalised)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastChange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastChange)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
