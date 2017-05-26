@@ -4,6 +4,20 @@
     ViewData["Title"] = "Cart Details";
 }
 
+<script type="text/javascript" src="~/js/jquery.creditCardValidator.js">
+    $('#cc_number').validateCreditCard(function (result) {
+        alert('CC type: ' + result.card_type.name
+          + '\nLength validation: ' + result.length_valid
+          + '\nLuhn validation: ' + result.luhn_valid);
+    });
+
+    var result = $('#cc_number').validateCreditCard();
+
+    alert('CC type: ' + result.card_type.name
+      + '\nLength validation: ' + result.length_valid
+      + '\nLuhn validation: ' + result.luhn_valid);
+</script>
+
 <h2>Cart Details</h2>
 
 <table class="table">
@@ -48,7 +62,6 @@
                 @using (Html.BeginForm("Delete", "MovieTickets", new { id = item.MovieTicketId }, FormMethod.Post))
                 {
                     <input type="submit" class="btn btn-danger" value="Remove" />
-                    //<a asp-controller="MovieTickets" asp-action="Delete" class="btn btn-danger" asp-route-id="@item.MovieTicketId">Remove</a>
                 }
             </td>
         </tr>

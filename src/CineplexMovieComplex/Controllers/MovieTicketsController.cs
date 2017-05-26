@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineplexMovieComplex.Models;
-using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 
 namespace CineplexMovieComplex.Controllers
@@ -23,6 +22,9 @@ namespace CineplexMovieComplex.Controllers
         // GET: MovieTickets
         public async Task<IActionResult> ViewCart()
         {
+            if (Request.Cookies["S"] == null)
+                return Redirect("~/Home/Index");
+
             var wdt_a2_jamesContext = _context.MovieTicket
                 .Include(m => m.Cart)
                 .Include(m => m.Seat)

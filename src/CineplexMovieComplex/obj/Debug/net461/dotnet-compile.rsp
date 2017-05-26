@@ -14,6 +14,8 @@
 --version:1.0.0.0
 --informational-version:1.0.0
 --target-framework:.NETFramework,Version=v4.6.1
+--reference:C:\Users\James\.nuget\packages\Antlr\3.4.1.9004\lib\Antlr3.Runtime.dll
+--reference:C:\Users\James\.nuget\packages\Microsoft.AspNet.Web.Optimization\1.1.3\lib\net40\System.Web.Optimization.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\net451\Microsoft.AspNetCore.Antiforgery.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\net451\Microsoft.AspNetCore.Authentication.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\net451\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -121,6 +123,7 @@
 --reference:C:\Users\James\.nuget\packages\Microsoft.VisualStudio.Web.CodeGeneration.Tools\1.0.0-preview2-final\lib\net451\dotnet-aspnet-codegenerator.exe
 --reference:C:\Users\James\.nuget\packages\Microsoft.VisualStudio.Web.CodeGeneration.Utils\1.0.0-preview2-final\lib\net451\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.VisualStudio.Web.CodeGenerators.Mvc\1.0.0-preview2-final\lib\net451\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+--reference:C:\Users\James\.nuget\packages\Microsoft.Web.Infrastructure\1.0.0\lib\net40\Microsoft.Web.Infrastructure.dll
 --reference:C:\Users\James\.nuget\packages\Microsoft.Win32.Primitives\4.3.0\ref\net46\Microsoft.Win32.Primitives.dll
 --reference:C:\Users\James\.nuget\packages\Newtonsoft.Json\9.0.1\lib\net45\Newtonsoft.Json.dll
 --reference:C:\Users\James\.nuget\packages\NuGet.Common\3.5.0-beta2-1484\lib\net45\NuGet.Common.dll
@@ -195,6 +198,7 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Threading.Timer.dll
 --reference:C:\Users\James\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\net46\System.Xml.ReaderWriter.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Facades\System.Xml.XDocument.dll
+--reference:C:\Users\James\.nuget\packages\WebGrease\1.5.2\lib\WebGrease.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll
@@ -235,6 +239,8 @@ C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\Ci
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\Cart.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\Cineplex.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\CineplexMovie.cs
+C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\CreditCardAttribute.cs
+C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\CreditCardModel.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\Enquiry.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\Movie.cs
 C:\Users\James\Documents\Visual Studio 2015\Projects\CineplexMovieComplex\src\CineplexMovieComplex\Models\MovieComingSoon.cs

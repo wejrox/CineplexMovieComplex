@@ -15,6 +15,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @RenderSection("JavasScript", required: false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -42,7 +43,23 @@
                     </li>
                     <li><a asp-area="" asp-controller="Cineplexes" asp-action="Index">Cinemas</a></li>
                     <li><a asp-area="" asp-controller="CineplexMovies" asp-action="Index">Session Times</a></li>
-                    <li><a asp-area="" asp-controller="MovieTickets" asp-action="ViewCart" style="color:gold">Cart</a></li>
+                    @{ 
+                        @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+                        string sid = "";
+                        bool display = false;
+                        try
+                        {
+                            HttpContextAccessor.HttpContext.Request.Cookies.TryGetValue("S", out sid);
+                            int id = int.Parse(sid);
+                            display = true;
+                        }
+                        catch { }
+
+                        if (display)
+                        {
+                            <li><a asp-area="" asp-controller="MovieTickets" asp-action="ViewCart" style="color:gold">Cart</a></li>
+                        }
+                    }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

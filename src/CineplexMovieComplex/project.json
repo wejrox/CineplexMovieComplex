@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-CineplexMovieComplex-86bca1dc-16ae-4ae6-bc22-2f8dffcae438",
 
     "dependencies": {
@@ -41,7 +41,8 @@
         "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
             "version": "1.0.0-preview2-final",
             "type": "build"
-        }
+        },
+        "Microsoft.AspNet.Web.Optimization": "1.1.3"
     },
 
   "tools": {

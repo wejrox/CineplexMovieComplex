@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETFramework,Version=v4.6.1/",
-    "signature": "2557eb94c2b60ee2a2fa4ce78b8475a9f0676191"
+    "signature": "6218e93789b43a4e5bb25f429a3d30ce5f497ce0"
   },
   "compilationOptions": {
     "defines": [
@@ -36,15 +36,30 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
+          "Microsoft.AspNet.Web.Optimization": "1.1.3"
         },
         "compile": {
           "CineplexMovieComplex.exe": {}
         }
       },
+      "Antlr/3.4.1.9004": {
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
@@ -968,6 +983,11 @@
           "lib/net451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "System": "4.0.0.0",
@@ -1441,6 +1461,15 @@
           "mscorlib": "4.0.0.0"
         }
       },
+      "WebGrease/1.5.2": {
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        }
+      },
       "mscorlib/4.0.0.0": {
         "compile": {
           ".NETFramework/v4.6.1/mscorlib.dll": {}
@@ -1554,15 +1583,30 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
+          "Microsoft.AspNet.Web.Optimization": "1.1.3"
         },
         "runtime": {
           "CineplexMovieComplex.exe": {}
         }
       },
+      "Antlr/3.4.1.9004": {
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
@@ -2482,6 +2526,11 @@
           "lib/net451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "System": "4.0.0.0",
@@ -2849,6 +2898,15 @@
           "lib/net46/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "WebGrease/1.5.2": {
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      },
       "mscorlib/4.0.0.0": {},
       "System/4.0.0.0": {},
       "System.Core/4.0.0.0": {},
@@ -2875,10 +2933,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Antlr/3.4.1.9004": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c1S+HBE+KYA5EBxtn25LEK02hHPH/tDQ6RviUTTCJpZIPoputtn8ArsQJy9lVJWZOnw37ufByO2Fmf1M8wpr8Q=="
+    },
     "Libuv/1.9.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-9Q7AaqtQhS8JDSIvRBt6ODSLWDBI4c8YxNxyCQemWebBFUtBbc6M5Vi5Gz1ZyIUlTW3rZK9bIr5gnVyv0z7a2Q=="
+    },
+    "Microsoft.AspNet.Web.Optimization/1.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TWKKpTWEdB8jXp2Vl2TXNKW30GBQg6nnh0y8iZWmGY5c1XY4f649vfDslNHsCsvk9JZxc1Rkm/UGDdfq4gjWRQ=="
     },
     "Microsoft.AspNetCore.Antiforgery/1.0.1": {
       "type": "package",
@@ -3310,6 +3378,11 @@
       "serviceable": true,
       "sha512": "sha512-f01OAOfsctcN7gSa05qYK8AgU1E/BFeZizvszNJMXY3BMJbYSj+3+YqyLunkMSf7LN92kcl7gQsAY9FayEH3ag=="
     },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg=="
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3649,6 +3722,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FLhdYJx4331oGovQypQ8JIw2kEmNzCsjVOVYY/16kZTUoquZG85oVn7yUhBE2OZt1yGPSXAL0HTEfzjlbNpM7Q=="
+    },
+    "WebGrease/1.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VoyDSOOugLx3q5IyOgEcjeYZQOqV9VWZQT57UtN4szlYhAmOcEjVfKWXbtRqBuX43pgyL9E7nMSIPoryC8Cu1Q=="
     },
     "mscorlib/4.0.0.0": {
       "type": "referenceassembly",
