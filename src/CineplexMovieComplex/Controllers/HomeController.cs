@@ -10,6 +10,10 @@ namespace CineplexMovieComplex.Controllers
     {
         public IActionResult Index()
         {
+            if (Request.Cookies["Identity.External"] != null)
+            {
+                Response.Cookies.Delete("Identity.External");
+            }
             return View();
         }
 
