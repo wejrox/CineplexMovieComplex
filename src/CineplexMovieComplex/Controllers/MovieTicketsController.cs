@@ -73,7 +73,7 @@ namespace CineplexMovieComplex.Controllers
                 movieTicket.SeatId = model.SelectedSeatId;
 
                 // Accomodate for seat starting from 1
-                movieTicket.SeatId += 1;
+                //movieTicket.SeatId += 1;
                 // Update the seat to be reserved in DB
                 Seat s = _context.Seat.Where(se => se.SeatId == movieTicket.SeatId).FirstOrDefault();
                 s.Reserved = true;
@@ -120,7 +120,7 @@ namespace CineplexMovieComplex.Controllers
                 _context.MovieTicket.Add(movieTicket);
 
                 // Reduce spaces available
-                CineplexMovie cm = _context.CineplexMovie.Where(x => x.CineplexMovieId == model.CineplexMovie.CineplexMovieId).First();
+                CineplexMovie cm = _context.CineplexMovie.Where(x => x.CineplexMovieId == s.CineplexMovieId).First();
                 cm.SeatsAvailable -= 1;
                 _context.Update(cm);
 
