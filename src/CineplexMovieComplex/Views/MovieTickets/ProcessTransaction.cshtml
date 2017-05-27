@@ -1,9 +1,12 @@
 ﻿@model CineplexMovieComplex.Models.CreditCardModel
-
+@{
+    ViewData["Title"] = "Process Transaction";
+}
 <h2>Finalise Payment</h2>
 <div>
-@using (Html.BeginForm("FinalisePayment", "MovieTickets", FormMethod.Post))
+@using (Html.BeginForm("FinaliseTransaction", "MovieTickets", FormMethod.Post))
 {
+    @Html.ValidationSummary(true)
     @Html.AntiForgeryToken();
     <h4>
         Please enter your credit card information below.

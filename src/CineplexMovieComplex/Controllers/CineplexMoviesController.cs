@@ -85,6 +85,14 @@ namespace CineplexMovieComplex.Controllers
                 return NotFound();
             }
 
+            // Limit to 5 items
+            if (Request.Cookies["S"] != null)
+            {
+                int cartItems = _context.MovieTicket.Where(m => m.CartId == int.Parse(Request.Cookies["S"])).Count();
+                if (cartItems > 4)
+                    return Redirect("~/MovieTickets/CartFull");
+            }
+
             BookSeatFormModel bookSeatFormModel = new BookSeatFormModel();
             bookSeatFormModel.CineplexMovie = cineplexMovie;
 

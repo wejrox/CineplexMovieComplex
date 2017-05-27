@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CineplexMovieComplex.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using System.Web;
 
 namespace CineplexMovieComplex.Controllers
 {
@@ -26,18 +27,19 @@ namespace CineplexMovieComplex.Controllers
             // Validate ability to be on cart page
             if (Request.Cookies["S"] == null)
                 return Redirect("~/Home/Index");
-            var MovieTickets = await _context.MovieTicket.Where(mt => mt.CartId == int.Parse(Request.Cookies["S"])).ToListAsync();
-            if(MovieTickets == null)
-                return Redirect("~/Home/Index");
 
-            var wdt_a2_jamesContext = _context.MovieTicket
+            var MovieTickets = _context.MovieTicket
                 .Include(m => m.Cart)
                 .Include(m => m.Seat)
                 .Include(m => m.Seat.CineplexMovie)
                 .Include(m => m.Seat.CineplexMovie.Movie)
-                .Include(m => m.Seat.CineplexMovie.Cineplex);
+                .Include(m => m.Seat.CineplexMovie.Cineplex)
+                .Where(mt => mt.CartId == int.Parse(Request.Cookies["S"])).ToListAsync();
 
-            return View(await wdt_a2_jamesContext.ToListAsync());
+            if (MovieTickets == null)
+                return Redirect("~/Home/Index");
+
+            return View(await MovieTickets);
         }
 
         // GET: MovieTickets/Checkout
@@ -53,6 +55,13 @@ namespace CineplexMovieComplex.Controllers
             var c = await _context.Cart.Where(_c => _c.CartId == int.Parse(Request.Cookies["S"])).FirstAsync();
             c.CustomerName = User.Identity.Name;
             _context.Cart.Update(c);
+
+            // Update cookie by 24 hours
+            CookieOptions options = new CookieOptions();
+            options.Expires = DateTime.Now.AddHours(24);
+            string s = Request.Cookies["S"];
+            Response.Cookies.Delete("S");
+            Response.Cookies.Append("S", s, options);
 
             await _context.SaveChangesAsync();
 
@@ -81,6 +90,44 @@ namespace CineplexMovieComplex.Controllers
             CreditCardModel ccm = new CreditCardModel();
 
             return View(ccm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> FinaliseTransaction (CreditCardModel ccm)
+        {
+            if(ModelState.IsValid)
+            {
+                /* 
+                * Handle payment? We don't do that right?
+                */
+
+                if (User.Identity.IsAuthenticated == false)
+                    return Redirect("~/Account/Login");
+                if (Request.Cookies["S"] == null)
+                    return Redirect("~/Home/Index");
+
+                // Check date, no longer valid if its out of date
+                DateTime dt = new DateTime(2000 + ccm.ExpiryYear, ccm.ExpiryMonth, 1).AddMonths(1).AddDays(-1);
+                if (DateTime.Now > dt)
+                    return Redirect("~/MovieTickets/ProcessTransaction");
+
+
+                // Finalise cart
+                var c = await _context.Cart.Where(_c => _c.CartId == int.Parse(Request.Cookies["S"])).FirstAsync();
+                c.Finalised = true;
+                Response.Cookies.Delete("S");
+                _context.Cart.Update(c);
+
+                await _context.SaveChangesAsync();
+
+                var _mt = await _context.MovieTicket.Where(mt => mt.CartId == c.CartId).ToListAsync();
+                PurchaseDetails pd = new PurchaseDetails(_mt);
+
+                return View(pd);
+            }
+
+            return Redirect("~/MovieTickets/ProcessTransaction");
         }
 
         // GET: MovieTickets/Details/5
@@ -118,6 +165,14 @@ namespace CineplexMovieComplex.Controllers
             MovieTicket movieTicket = new MovieTicket();
             if (ModelState.IsValid)
             {
+                // Limit to 5 items
+                if (Request.Cookies["S"] != null)
+                {
+                    int cartItems = _context.MovieTicket.Where(m => m.CartId == int.Parse(Request.Cookies["S"])).Count();
+                    if (cartItems > 4)
+                        return Redirect("~/MovieTickets/CartFull");
+                }
+
                 // Create the movie ticket from the model supplied
                 movieTicket = new MovieTicket();
                 movieTicket.SeatId = model.SelectedSeatId;

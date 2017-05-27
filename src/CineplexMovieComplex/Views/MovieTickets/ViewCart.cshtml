@@ -8,7 +8,9 @@
 @{
     if (Model.Any())
     {
+        <div style="text-align:right;">
         <a class="btn btn-success" asp-action="Checkout">Finalise Transaction</a>
+            </div>
     }
 }
 
@@ -50,7 +52,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Seat.CombinedSeat)
             </td>
-            <td>
+            <td style="text-align:right;">
                 @using (Html.BeginForm("Delete", "MovieTickets", new { id = item.MovieTicketId }, FormMethod.Post))
                 {
                     <input type="submit" class="btn btn-danger" value="Remove" />
