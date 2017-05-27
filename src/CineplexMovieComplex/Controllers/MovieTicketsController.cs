@@ -23,7 +23,11 @@ namespace CineplexMovieComplex.Controllers
         // GET: MovieTickets
         public async Task<IActionResult> ViewCart()
         {
+            // Validate ability to be on cart page
             if (Request.Cookies["S"] == null)
+                return Redirect("~/Home/Index");
+            var MovieTickets = await _context.MovieTicket.Where(mt => mt.CartId == int.Parse(Request.Cookies["S"])).ToListAsync();
+            if(MovieTickets == null)
                 return Redirect("~/Home/Index");
 
             var wdt_a2_jamesContext = _context.MovieTicket
@@ -57,6 +61,25 @@ namespace CineplexMovieComplex.Controllers
             pd.CalculateDetails();
 
             return View(pd);
+        }
+
+        // GET: MovieTickets/ProcessTransaction
+        public async Task<IActionResult> ProcessTransaction()
+        {
+            // Make sure theres a cart to process
+            if (Request.Cookies["S"] == null)
+                return Redirect("~/Home/Index");
+            // Make sure it's the logged in users cart
+            var cart = await _context.Cart.Where(mt => mt.CartId == int.Parse(Request.Cookies["S"])).FirstAsync();
+            if (cart == null)
+            {
+                return NotFound();
+            }
+
+            if (cart.CustomerName != User.Identity.Name)
+                return Redirect("~/Home/Index");
+
+            return View();
         }
 
         // GET: MovieTickets/Details/5

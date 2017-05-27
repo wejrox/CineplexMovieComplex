@@ -1,0 +1,18 @@
+﻿@model CineplexMovieComplex.Models.CreditCardModel
+
+<h2>Finalise Payment</h2>
+
+@using (Html.BeginForm("FinalisePayment", "MovieTickets", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <h4>
+        Please enter your credit card information below.
+    </h4>
+    <p>
+        All data transmitted is encrypted and secured with SSL/HTTPS
+    </p>
+    <hr />
+    <div class="form-group">
+        
+    </div>
+}
