@@ -15,7 +15,7 @@
         </dt>
         <dd>
             <img src="@Url.Content(@Html.DisplayTextFor(model => model.Movie.ImageUrl))" style="display:block; max-height:500px; max-width:300px; height:auto; width:auto;" />
-            <br />
+            <hr />
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Movie.Title)
@@ -50,6 +50,9 @@
     </dl>
 </div>
 <div>
-    <h4><b><a asp-action="InitiateBooking">Book a seat!</a></b></h4><br />
-    <a asp-action="Index">Back to List</a><br />
+    <div style="padding-left:280px;">
+    <a class="btn btn-default" asp-action="SelectSeat" asp-route-id="@Html.DisplayTextFor(model => model.CineplexMovieId)">Book a seat! </a>
+        </div>
+    <hr />
+    <a class="btn btn-default" asp-action="Index">Back to List</a><br />
 </div>

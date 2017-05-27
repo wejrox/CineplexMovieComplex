@@ -8,7 +8,6 @@ namespace CineplexMovieComplex.Models
         public Cineplex()
         {
             CineplexMovie = new HashSet<CineplexMovie>();
-            Seat = new HashSet<Seat>();
         }
 
         public int CineplexId { get; set; }
@@ -18,6 +17,5 @@ namespace CineplexMovieComplex.Models
         public string ImageUrl { get; set; }
 
         public virtual ICollection<CineplexMovie> CineplexMovie { get; set; }
-        public virtual ICollection<Seat> Seat { get; set; }
     }
 }

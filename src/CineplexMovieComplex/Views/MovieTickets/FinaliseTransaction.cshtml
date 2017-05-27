@@ -1,0 +1,87 @@
+﻿@model PurchaseDetails
+
+@{ 
+    // Add conditional for unsuccessful booking
+    ViewData["Title"] = "Booking Successful";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Receipt <b>#@Html.DisplayFor(m => m.MovieTickets[0].CartId)</b></h4>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Ticket Type
+                </th>
+                <th>
+                    #
+                </th>
+                <th>
+                    Price each
+                </th>
+                <th>
+                    Total price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.NumConcession > 0)
+            {
+            <tr>
+                <td>
+                    Concession
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.NumConcession)
+                </td>
+                <td>
+                    $@Html.DisplayFor(m => m.ConcessionPrice)
+                </td>
+                <td>
+                    $@Html.DisplayFor(m => m.ConcessionTotalCost)
+                </td>
+            </tr>
+            }
+            @if (Model.NumAdult > 0)
+            {
+            <tr>
+                <td>
+                    Adult
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.NumAdult)
+                </td>
+                <td>
+                    $@Html.DisplayFor(m => m.AdultPrice)
+                </td>
+                <td>
+                    $@Html.DisplayFor(m => m.AdultTotalCost)
+                </td>
+            </tr>
+            }
+            <tr>
+                <td></td>
+                <td></td>
+                <td><b>Total Cost:</b></td>
+                <td><b>$@Html.DisplayFor(m => m.TotalCost)</b></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+                    {
+                        <input type="submit" class="btn btn-default" value="Log Out" />
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Return to Home</a>
+</div>

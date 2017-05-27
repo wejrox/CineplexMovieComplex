@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using CineplexMovieComplex.Data;
 using CineplexMovieComplex.Models;
 using CineplexMovieComplex.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CineplexMovieComplex
 {
@@ -47,15 +48,24 @@ namespace CineplexMovieComplex
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            //services.AddMvc();
 
             // Add custom  configuration
             services.AddDbContext<Models.wdt_a2_jamesContext>(options =>
-            options.UseSqlServer(Configuration["Data:wdt_a2_jamesContext:ConnectionString"]));
+                options.UseSqlServer(Configuration["Data:wdt_a2_jamesContext:ConnectionString"]));
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            //services.AddMvc();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddMvc(options =>
+            {
+                options.SslPort = 44301;
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,6 +91,13 @@ namespace CineplexMovieComplex
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
+            app.UseGoogleAuthentication(new GoogleOptions()
+            {
+                ClientId = Configuration["Authentication:Google:ClientId"],
+                ClientSecret = Configuration["Authentication:Google:ClientSecret"]
+            });
+
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

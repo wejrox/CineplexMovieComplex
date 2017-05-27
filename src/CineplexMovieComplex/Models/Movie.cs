@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace CineplexMovieComplex.Models
 {
@@ -10,7 +9,7 @@ namespace CineplexMovieComplex.Models
         {
             CineplexMovie = new HashSet<CineplexMovie>();
         }
-        
+
         public int MovieId { get; set; }
         public string Title { get; set; }
         public string ShortDescription { get; set; }

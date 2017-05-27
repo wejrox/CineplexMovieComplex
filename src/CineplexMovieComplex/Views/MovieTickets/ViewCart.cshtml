@@ -1,0 +1,64 @@
+@model IEnumerable<CineplexMovieComplex.Models.MovieTicket>
+
+@{
+    ViewData["Title"] = "Cart Details";
+}
+
+<h2>Cart Details</h2>
+@{
+    if (Model.Any())
+    {
+        <div style="text-align:right;">
+        <a class="btn btn-success" asp-action="Checkout">Finalise Transaction</a>
+            </div>
+    }
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Poster
+            </th>
+            <th>
+                Movie Name
+            </th> 
+            <th>
+                Location
+            </th> 
+            <th>
+                Time
+            </th> 
+            <th>
+                Seat
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@Url.Content(item.Seat.CineplexMovie.Movie.ImageUrl)" style="display:block; max-height:300px;max-width:150px;height:auto;width:auto;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat.CineplexMovie.Movie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat.CineplexMovie.Cineplex.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat.CineplexMovie.ViewingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat.CombinedSeat)
+            </td>
+            <td style="text-align:right;">
+                @using (Html.BeginForm("Delete", "MovieTickets", new { id = item.MovieTicketId }, FormMethod.Post))
+                {
+                    <input type="submit" class="btn btn-danger" value="Remove" />
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

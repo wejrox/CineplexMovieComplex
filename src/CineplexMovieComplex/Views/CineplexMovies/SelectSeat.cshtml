@@ -1,0 +1,66 @@
+@model CineplexMovieComplex.Models.BookSeatFormModel
+
+@{
+    ViewData["Title"] = "SelectSeat";
+}
+
+<h2>Select Seat</h2>
+
+<div>
+@using (Html.BeginForm("Create", "MovieTickets", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <h4>
+        Book seats for <b>@Html.DisplayFor(m => m.CineplexMovie.Movie.Title)</b>
+    </h4>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.CineplexMovie.Movie.Title, new { @class = "col-md-2 control-label", @style = "margin-top: 7px;", @readonly = "readonly" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.CineplexMovie.Movie.Title, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(m => m.CineplexMovie.Movie.Title)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CineplexMovie.Cineplex.Location, new { @class = "col-md-2 control-label", @style = "margin-top: 7px;", @readonly = "readonly" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.CineplexMovie.Cineplex.Location, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(m => m.CineplexMovie.Cineplex.Location)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CineplexMovie.ViewingTime, new { @class = "col-md-2 control-label", @style = "margin-top: 7px;", @readonly = "readonly" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.CineplexMovie.ViewingTime, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(m => m.CineplexMovie.ViewingTime)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Concession, new { @class = "col-md-2 control-label", @style = "margin-top: 7px;" })
+        <div class="col-md-10">
+            @Html.CheckBoxFor(m => m.Concession, new { @class = "form-control checkbox" })
+            @Html.ValidationMessageFor(m => m.Concession)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CineplexMovie.Seat, new { @class = "col-md-2 control-label", @style = "margin-top: 7px;", @readonly = "readonly" })
+        <div class="col-md-offset-2 col-md-10">
+            @Html.DropDownListFor(m => m.SelectedSeatId, new SelectList(Model.CineplexMovie.Seat.Where(s => s.Reserved == false), "SeatId", "CombinedSeat"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SelectedSeatId)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default form-control" value="Reserve Ticket" />
+        </div>
+    </div>
+}
+    <div class="form-group" style="margin-top:20%;">
+        <div class="col-md-offset-2 col-md-10">
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

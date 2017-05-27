@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
+
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @RenderSection("JavasScript", required: false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -36,12 +38,29 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="Movies" asp-action="Index">Screening</a></li>
-                            <li><a asp-area="" asp-controller="MovieComingSoons" asp-action="Index">Coming Soon!</a></li>
+                            <li><a asp-area="" asp-controller="Movies" asp-action="Index">Out Now</a></li>
+                            <li><a asp-area="" asp-controller="MovieComingSoons" asp-action="Index">Coming Soon</a></li>
                         </ul>     
-                    </li>           
+                    </li>
                     <li><a asp-area="" asp-controller="Cineplexes" asp-action="Index">Cinemas</a></li>
-                    <li><a asp-area="" asp-controller="CineplexMovies" asp-action="Index">Sessions</a></li>
+                    <li><a asp-area="" asp-controller="CineplexMovies" asp-action="Index">Session Times</a></li>
+                    @{ 
+                        @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+                        string sid = "";
+                        bool display = false;
+                        try
+                        {
+                            HttpContextAccessor.HttpContext.Request.Cookies.TryGetValue("S", out sid);
+                            int id = int.Parse(sid);
+                            display = true;
+                        }
+                        catch { }
+
+                        if (display)
+                        {
+                            <li><a asp-area="" asp-controller="MovieTickets" asp-action="ViewCart" style="color:gold">Cart</a></li>
+                        }
+                    }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
@@ -59,6 +78,7 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"

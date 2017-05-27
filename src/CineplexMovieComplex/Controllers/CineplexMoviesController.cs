@@ -70,6 +70,35 @@ namespace CineplexMovieComplex.Controllers
             return View(cineplexMovie);
         }
 
+        // GET: Display seating to choose from
+        public async Task<IActionResult> SelectSeat(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cineplexMovie = await _context.CineplexMovie.Include(cm => cm.Seat).Include(cm => cm.Movie).Include(cm => cm.Cineplex).SingleOrDefaultAsync(m => m.CineplexMovieId == id);
+
+            if (cineplexMovie == null)
+            {
+                return NotFound();
+            }
+
+            // Limit to 5 items
+            if (Request.Cookies["S"] != null)
+            {
+                int cartItems = _context.MovieTicket.Where(m => m.CartId == int.Parse(Request.Cookies["S"])).Count();
+                if (cartItems > 4)
+                    return Redirect("~/MovieTickets/CartFull");
+            }
+
+            BookSeatFormModel bookSeatFormModel = new BookSeatFormModel();
+            bookSeatFormModel.CineplexMovie = cineplexMovie;
+
+            return View(bookSeatFormModel);
+        }
+
         // GET: CineplexMovies/Create
         public IActionResult Create()
         {
