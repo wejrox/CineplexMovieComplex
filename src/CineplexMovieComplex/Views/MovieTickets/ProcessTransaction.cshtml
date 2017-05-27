@@ -1,7 +1,7 @@
 ﻿@model CineplexMovieComplex.Models.CreditCardModel
 
 <h2>Finalise Payment</h2>
-
+<div>
 @using (Html.BeginForm("FinalisePayment", "MovieTickets", FormMethod.Post))
 {
     @Html.AntiForgeryToken();
@@ -13,6 +13,59 @@
     </p>
     <hr />
     <div class="form-group">
-        
+    <table>
+        <tbody>
+            <tr>
+                <td style="padding:5px;">
+                    Credit Card Number
+                </td>
+                <td style="padding:5px;">
+                    @Html.TextBoxFor(m => m.CreditCardNumber)
+                    @Html.ValidationMessageFor(m => m.CreditCardNumber)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:5px;">
+                    Expiry
+                </td>
+                <td style="padding:5px;">
+                    @Html.DropDownListFor(m => m.ExpiryMonth, new SelectList(Model.PosExpiryMonth))
+                    @Html.ValidationMessageFor(m => m.ExpiryMonth)
+                    /
+                    @Html.DropDownListFor(m => m.ExpiryYear, new SelectList(Model.PosExpiryYear))
+                    @Html.ValidationMessageFor(m => m.ExpiryYear)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:5px;">
+                    Name on card
+                </td>
+                <td style="padding:5px;">
+                    @Html.TextBoxFor(m => m.NameOnCard, new { @class = "control-form" })
+                    @Html.ValidationMessageFor(m => m.NameOnCard)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:5px;">
+                    CVV
+                </td>
+                <td style="padding:5px;">
+                    @Html.TextBoxFor(m => m.CVV, new { @class = "control-form" })
+                    @Html.ValidationMessageFor(m => m.CVV)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-success" value="Submit" />
+        </div>
     </div>
 }
+    <div class="form-group" style="margin-top:20%;">
+        <div class="col-md-offset-2 col-md-10">
+            <a class="btn btn-default form-control" asp-controller="Home" asp-action="Index">Return to cart</a>
+        </div>
+    </div>
+</div>

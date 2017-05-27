@@ -56,10 +56,9 @@ namespace CineplexMovieComplex.Controllers
 
             await _context.SaveChangesAsync();
 
-            PurchaseDetails pd = new PurchaseDetails();
-            pd.MovieTickets = await _context.MovieTicket.Where(mt => mt.CartId == c.CartId).ToListAsync();
-            pd.CalculateDetails();
+            var _mt = await _context.MovieTicket.Where(mt => mt.CartId == c.CartId).ToListAsync();
 
+            PurchaseDetails pd = new PurchaseDetails(_mt);
             return View(pd);
         }
 
@@ -79,7 +78,9 @@ namespace CineplexMovieComplex.Controllers
             if (cart.CustomerName != User.Identity.Name)
                 return Redirect("~/Home/Index");
 
-            return View();
+            CreditCardModel ccm = new CreditCardModel();
+
+            return View(ccm);
         }
 
         // GET: MovieTickets/Details/5

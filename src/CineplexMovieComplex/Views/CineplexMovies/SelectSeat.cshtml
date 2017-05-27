@@ -55,9 +55,11 @@
         </div>
     </div>
 }
-</div>
-<div style="margin-top:20%;">
-    <a asp-action="Index">Back to List</a>
+    <div class="form-group" style="margin-top:20%;">
+        <div class="col-md-offset-2 col-md-10">
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
 </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

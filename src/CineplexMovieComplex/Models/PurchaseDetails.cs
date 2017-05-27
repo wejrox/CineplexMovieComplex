@@ -22,8 +22,9 @@ namespace CineplexMovieComplex.Models
         }
 
         // Sets the cost and amount of tickets
-        public void CalculateDetails()
+        public PurchaseDetails(List<MovieTicket> mt)
         {
+            MovieTickets = mt;
             foreach (MovieTicket m in MovieTickets)
             {
                 if (m.Concession)
