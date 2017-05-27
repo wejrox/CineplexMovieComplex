@@ -10,7 +10,7 @@ namespace CineplexMovieComplex.Models
     {
         [CreditCard, Required]
         public string CreditCardNumber { get; set; }
-        [StringLength(3), Required]
+        [StringLength(3, MinimumLength = 3), Required]
         public string CVV { get; set;} 
         [Required]
         public int ExpiryMonth { get; set; }

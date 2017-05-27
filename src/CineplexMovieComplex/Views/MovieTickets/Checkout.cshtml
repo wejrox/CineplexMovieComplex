@@ -1,6 +1,9 @@
 ﻿@model CineplexMovieComplex.Models.PurchaseDetails
-
-<h2>Please review your purchase details</h2>
+@{
+    ViewData["Title"] = "Review Cart";
+}
+<h2>Review Cart</h2>
+<h4>Please review your purchase details</h4>
 <table class="table">
     <thead>
         <tr>
@@ -19,6 +22,8 @@
         </tr>
     </thead>
     <tbody>
+        @if (Model.NumConcession > 0)
+        {
         <tr>
             <td>
                 Concession
@@ -33,6 +38,9 @@
                 $@Html.DisplayFor(m => m.ConcessionTotalCost)
             </td>
         </tr>
+        }
+        @if (Model.NumAdult > 0)
+        {
         <tr>
             <td>
                 Adult
@@ -47,6 +55,7 @@
                 $@Html.DisplayFor(m => m.AdultTotalCost)
             </td>
         </tr>
+        }
         <tr>
             <td></td>
             <td></td>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Cart Full";
+}
+
+<h2>
+    @ViewData["Title"]
+</h2>
+
+<h4>Maximum number of tickets reached</h4>
+
+<p>
+    A maximum of five tickets can be purchased at a time. <br />
+    We apologise for any inconvenience this may cause.
+</p>
+
+<hr />
+<a class="btn btn-default" asp-action="ViewCart">Go to Cart</a>
+<a class="btn btn-default" asp-controller="Home" asp-action="Index">Home</a>
