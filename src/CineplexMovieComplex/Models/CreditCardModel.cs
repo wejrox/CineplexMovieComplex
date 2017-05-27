@@ -19,26 +19,18 @@ namespace CineplexMovieComplex.Models
         [StringLength(40), Required]
         public string NameOnCard { get; set; }
         
-        public List<string> PosExpiryMonth
+        public IEnumerable<string> PosExpiryMonth { get; private set; }
+        public List<string> PosExpiryYear { get; private set; }
+
+        public CreditCardModel()
         {
-            get
-            {
-                return new List<string> { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11" };
-            }
-        } 
-        public List<string> PosExpiryYear
-        {
-            get
-            {
-                PosExpiryYear = new List<string>();
-                for (int i = 0; i < 100; i++)
-                    PosExpiryYear.Add(i.ToString());
-                return PosExpiryYear;
-            }
-            set
-            {
-                PosExpiryYear = value;
-            }
-        } 
+            PosExpiryYear = new List<string>();
+            for (int i = 0; i < 10; i++)
+                PosExpiryYear.Add("0" + i.ToString());
+            for (int i = 10; i < 100; i++)
+                PosExpiryYear.Add(i.ToString());
+
+            PosExpiryMonth = new List <string> { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11" };
+        }
     }
 }
