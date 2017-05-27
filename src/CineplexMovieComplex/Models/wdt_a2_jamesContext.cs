@@ -18,7 +18,7 @@ namespace CineplexMovieComplex.Models
             {
                 entity.Property(e => e.CartId).HasColumnName("CartID");
 
-                entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
+                entity.Property(e => e.CustomerName).HasColumnName("CustomerName");
 
                 entity.Property(e => e.LastChange).HasColumnType("datetime");
             });

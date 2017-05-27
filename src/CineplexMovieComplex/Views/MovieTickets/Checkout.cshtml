@@ -1,0 +1,68 @@
+﻿@model CineplexMovieComplex.Models.PurchaseDetails
+
+<h2>Please review your purchase details</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ticket Type
+            </th>
+            <th>
+                #
+            </th>
+            <th>
+                Price each
+            </th>
+            <th>
+                Total price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Concession
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.NumConcession)
+            </td>
+            <td>
+                $@Html.DisplayFor(m => m.ConcessionPrice)
+            </td>
+            <td>
+                $@Html.DisplayFor(m => m.ConcessionTotalCost)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Adult
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.NumAdult)
+            </td>
+            <td>
+                $@Html.DisplayFor(m => m.AdultPrice)
+            </td>
+            <td>
+                $@Html.DisplayFor(m => m.AdultTotalCost)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><b>Total Cost:</b></td>
+            <td><b>$@Html.DisplayFor(m => m.TotalCost)</b></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @using (Html.BeginForm("ProcessTransaction", "MovieTickets", FormMethod.Post))
+                {
+                    <input type="submit" class="btn btn-success" value="Finalise Transaction" />
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

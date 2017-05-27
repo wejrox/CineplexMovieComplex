@@ -12,7 +12,7 @@ namespace CineplexMovieComplex.Models
         }
         [Key]
         public int CartId { get; set; }
-        public int? CustomerId { get; set; }
+        public string CustomerName { get; set; }
         public DateTime? LastChange { get; set; }
         public bool? Finalised { get; set; }
 

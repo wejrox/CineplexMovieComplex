@@ -48,17 +48,17 @@ namespace CineplexMovieComplex
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            //services.AddMvc();
 
             // Add custom  configuration
             services.AddDbContext<Models.wdt_a2_jamesContext>(options =>
-            options.UseSqlServer(Configuration["Data:wdt_a2_jamesContext:ConnectionString"]));
+                options.UseSqlServer(Configuration["Data:wdt_a2_jamesContext:ConnectionString"]));
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
-            services.AddMvc();
+            //services.AddMvc();
             services.AddDistributedMemoryCache();
             services.AddSession();
             services.AddMvc(options =>

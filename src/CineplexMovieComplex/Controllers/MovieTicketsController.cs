@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineplexMovieComplex.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineplexMovieComplex.Controllers
 {
@@ -36,10 +37,26 @@ namespace CineplexMovieComplex.Controllers
         }
 
         // GET: MovieTickets/Checkout
+        [Authorize]
         public async Task<IActionResult> Checkout()
         {
+            if (User.Identity.IsAuthenticated == false)
+                return Redirect("~/Account/Login");
+            if (Request.Cookies["S"] == null)
+                return Redirect("~/Home/Index");
 
-            return View();
+            // Assign cart to this user
+            var c = await _context.Cart.Where(_c => _c.CartId == int.Parse(Request.Cookies["S"])).FirstAsync();
+            c.CustomerName = User.Identity.Name;
+            _context.Cart.Update(c);
+
+            await _context.SaveChangesAsync();
+
+            PurchaseDetails pd = new PurchaseDetails();
+            pd.MovieTickets = await _context.MovieTicket.Where(mt => mt.CartId == c.CartId).ToListAsync();
+            pd.CalculateDetails();
+
+            return View(pd);
         }
 
         // GET: MovieTickets/Details/5
