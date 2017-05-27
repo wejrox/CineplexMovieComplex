@@ -48,3 +48,5 @@ Temporary Items
 
 # Folders
 /src/CineplexMovieComplex/bin
+/.vs
+/src/CineplexMovieComplex/obj
