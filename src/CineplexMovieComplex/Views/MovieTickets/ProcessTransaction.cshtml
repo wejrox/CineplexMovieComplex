@@ -23,8 +23,8 @@
                         Credit Card Number
                     </td>
                     <td style="padding:5px;">
-                        @Html.TextBoxFor(m => m.CreditCardNumber)
-                        @Html.ValidationMessageFor(m => m.CreditCardNumber)
+                        @Html.TextBoxFor(m => m.CreditCardNumber) <br />
+                        <span style="color:red;">@Html.ValidationMessageFor(m => m.CreditCardNumber)</span>
                     </td>
                 </tr>
                 <tr>
@@ -44,8 +44,8 @@
                         Name on card
                     </td>
                     <td style="padding:5px;">
-                        @Html.TextBoxFor(m => m.NameOnCard, new { @class = "control-form" })
-                        @Html.ValidationMessageFor(m => m.NameOnCard)
+                        @Html.TextBoxFor(m => m.NameOnCard, new { @class = "control-form" }) <br />
+                        <span style="color:red;">@Html.ValidationMessageFor(m => m.NameOnCard)</span>
                     </td>
                 </tr>
                 <tr>
@@ -53,8 +53,8 @@
                         CVV
                     </td>
                     <td style="padding:5px;">
-                        @Html.TextBoxFor(m => m.CVV, new { @class = "control-form" })
-                        @Html.ValidationMessageFor(m => m.CVV)
+                        @Html.TextBoxFor(m => m.CVV, new { @class = "control-form" }) <br />
+                        <span style="color:red;">@Html.ValidationMessageFor(m => m.CVV)</span>
                     </td>
                 </tr>
                 <tr>
