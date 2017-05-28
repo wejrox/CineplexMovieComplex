@@ -6,6 +6,12 @@ namespace CineplexMovieComplex.Models
 {
     public partial class wdt_a2_jamesContext : DbContext
     {
+        // Testing
+        public wdt_a2_jamesContext(DbContextOptions<wdt_a2_jamesContext> options)
+            : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
