@@ -47,6 +47,6 @@ Temporary Items
 .apdisk
 
 # Folders
-/src/CineplexMovieComplex/bin
 /src/CineplexMovieComplex/obj
+/src/CineplexMovieComplex/bin
 .vs

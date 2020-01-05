@@ -1,13 +1,17 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #333;
 }
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: white;
+    height: 100%;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -41,10 +45,25 @@ textarea {
     width: 100%;
 }
 
+/*Adjusting carousel to stretch to fit body content's width*/
+.carousel-control-left{
+    left: -15px;
+}
+
+.carousel-control-right{
+    right: -15px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
   /* Hide captions */
   .carousel-caption {
     display: none
   }
+}
+
+/*Push footer to bottom of page*/
+footer{
+    padding-top: 48rem;
+    text-align: center;
 }
