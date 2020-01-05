@@ -8,6 +8,7 @@
     <PackageId>CineplexMovieComplex</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <UserSecretsId>aspnet-CineplexMovieComplex-86bca1dc-16ae-4ae6-bc22-2f8dffcae438</UserSecretsId>
+    <StartupObject>CineplexMovieComplex.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
